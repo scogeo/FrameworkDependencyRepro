@@ -14,6 +14,10 @@ let package = Package(
       name: "SharedModels",
       targets: ["SharedModels"]
     ),
+    .library(
+      name: "WidgetSync",
+      targets: ["WidgetSync"]
+    ),
   ],
   dependencies: [
     .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.9.0"),
@@ -32,6 +36,13 @@ let package = Package(
       name: "SharedModelsTests",
       dependencies: [
         "SharedModels"
+      ]
+    ),
+    .target(
+      name: "WidgetSync",
+      dependencies: [
+        "SharedModels",
+        .product(name: "Dependencies", package: "swift-dependencies"),
       ]
     ),
   ],

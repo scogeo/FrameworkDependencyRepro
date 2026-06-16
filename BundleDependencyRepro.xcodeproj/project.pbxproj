@@ -13,7 +13,9 @@
 		5CD2EF4D2FE1ED07006ECD9C /* SharedModels in Frameworks */ = {isa = PBXBuildFile; productRef = 5CD2EF4C2FE1ED07006ECD9C /* SharedModels */; };
 		5CD2EF542FE1F459006ECD9C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD2EF532FE1F459006ECD9C /* WidgetKit.framework */; };
 		5CD2EF562FE1F459006ECD9C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD2EF552FE1F459006ECD9C /* SwiftUI.framework */; };
-		5CD2EF632FE1F45A006ECD9C /* BundleDependencyReproWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5CD2EF522FE1F459006ECD9C /* BundleDependencyReproWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5CD2EF692FE1F63B006ECD9C /* SharedFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD2EF302FE1EC21006ECD9C /* SharedFramework.framework */; };
+		5CD2EF852FE1FDDA006ECD9C /* WidgetSync in Frameworks */ = {isa = PBXBuildFile; productRef = 5CD2EF842FE1FDDA006ECD9C /* WidgetSync */; };
+		5CD2EF8A2FE204AD006ECD9C /* BundleDependencyReproWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5CD2EF522FE1F459006ECD9C /* BundleDependencyReproWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,21 @@
 			remoteGlobalIDString = 5CD2EF2F2FE1EC21006ECD9C;
 			remoteInfo = SharedFramework;
 		};
-		5CD2EF612FE1F45A006ECD9C /* PBXContainerItemProxy */ = {
+		5CD2EF6B2FE1F63B006ECD9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CD2EF042FE1DC32006ECD9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CD2EF2F2FE1EC21006ECD9C;
+			remoteInfo = SharedFramework;
+		};
+		5CD2EF8B2FE204AD006ECD9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CD2EF042FE1DC32006ECD9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CD2EF512FE1F459006ECD9C;
+			remoteInfo = BundleDependencyReproWidgetExtension;
+		};
+		5CD2EF8E2FE204B3006ECD9C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CD2EF042FE1DC32006ECD9C /* Project object */;
 			proxyType = 1;
@@ -59,13 +75,13 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CD2EF682FE1F45A006ECD9C /* Embed Foundation Extensions */ = {
+		5CD2EF8D2FE204AD006ECD9C /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				5CD2EF632FE1F45A006ECD9C /* BundleDependencyReproWidgetExtension.appex in Embed Foundation Extensions */,
+				5CD2EF8A2FE204AD006ECD9C /* BundleDependencyReproWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CD2EF432FE1EC21006ECD9C /* SharedFramework.framework in Frameworks */,
+				5CD2EF852FE1FDDA006ECD9C /* WidgetSync in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +166,7 @@
 			files = (
 				5CD2EF562FE1F459006ECD9C /* SwiftUI.framework in Frameworks */,
 				5CD2EF542FE1F459006ECD9C /* WidgetKit.framework in Frameworks */,
+				5CD2EF692FE1F63B006ECD9C /* SharedFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,19 +227,21 @@
 				5CD2EF092FE1DC32006ECD9C /* Frameworks */,
 				5CD2EF0A2FE1DC32006ECD9C /* Resources */,
 				5CD2EF482FE1EC21006ECD9C /* Embed Frameworks */,
-				5CD2EF682FE1F45A006ECD9C /* Embed Foundation Extensions */,
+				5CD2EF8D2FE204AD006ECD9C /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				5CD2EF422FE1EC21006ECD9C /* PBXTargetDependency */,
-				5CD2EF622FE1F45A006ECD9C /* PBXTargetDependency */,
+				5CD2EF8C2FE204AD006ECD9C /* PBXTargetDependency */,
+				5CD2EF8F2FE204B3006ECD9C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				5CD2EF0E2FE1DC32006ECD9C /* BundleDependencyRepro */,
 			);
 			name = BundleDependencyRepro;
 			packageProductDependencies = (
+				5CD2EF842FE1FDDA006ECD9C /* WidgetSync */,
 			);
 			productName = BundleDependencyRepro;
 			productReference = 5CD2EF0C2FE1DC32006ECD9C /* BundleDependencyRepro.app */;
@@ -286,6 +306,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5CD2EF6C2FE1F63B006ECD9C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				5CD2EF572FE1F459006ECD9C /* BundleDependencyReproWidget */,
@@ -422,10 +443,20 @@
 			target = 5CD2EF2F2FE1EC21006ECD9C /* SharedFramework */;
 			targetProxy = 5CD2EF412FE1EC21006ECD9C /* PBXContainerItemProxy */;
 		};
-		5CD2EF622FE1F45A006ECD9C /* PBXTargetDependency */ = {
+		5CD2EF6C2FE1F63B006ECD9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CD2EF2F2FE1EC21006ECD9C /* SharedFramework */;
+			targetProxy = 5CD2EF6B2FE1F63B006ECD9C /* PBXContainerItemProxy */;
+		};
+		5CD2EF8C2FE204AD006ECD9C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5CD2EF512FE1F459006ECD9C /* BundleDependencyReproWidgetExtension */;
-			targetProxy = 5CD2EF612FE1F45A006ECD9C /* PBXContainerItemProxy */;
+			targetProxy = 5CD2EF8B2FE204AD006ECD9C /* PBXContainerItemProxy */;
+		};
+		5CD2EF8F2FE204B3006ECD9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CD2EF512FE1F459006ECD9C /* BundleDependencyReproWidgetExtension */;
+			targetProxy = 5CD2EF8E2FE204B3006ECD9C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -881,6 +912,10 @@
 		5CD2EF4C2FE1ED07006ECD9C /* SharedModels */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SharedModels;
+		};
+		5CD2EF842FE1FDDA006ECD9C /* WidgetSync */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WidgetSync;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

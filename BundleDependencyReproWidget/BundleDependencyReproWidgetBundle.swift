@@ -7,6 +7,7 @@
 
 import WidgetKit
 import SwiftUI
+import SharedFramework
 
 @main
 struct BundleDependencyReproWidgetBundle: WidgetBundle {
