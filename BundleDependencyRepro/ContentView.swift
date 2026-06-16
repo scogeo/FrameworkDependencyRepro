@@ -6,19 +6,25 @@
 //
 
 import SwiftUI
+import Dependencies
+import SharedModels
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+  
+  @Dependency(\.date) var date
+  @Dependency(\.myModelStore) var myModelStore
+  
+  var body: some View {
+    VStack {
+      Image(systemName: "globe")
+        .imageScale(.large)
+        .foregroundStyle(.tint)
+      Text("Hello, world!")
     }
+    .padding()
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
