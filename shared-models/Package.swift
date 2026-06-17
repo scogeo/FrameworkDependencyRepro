@@ -15,8 +15,8 @@ let package = Package(
       targets: ["SharedModels"]
     ),
     .library(
-      name: "WidgetSync",
-      targets: ["WidgetSync"]
+      name: "AppFeature",
+      targets: ["AppFeature"]
     ),
   ],
   dependencies: [
@@ -26,6 +26,13 @@ let package = Package(
   targets: [
     // Targets are the basic building blocks of a package, defining a module or a test suite.
     // Targets can depend on other targets in this package and products from dependencies.
+    .target(
+      name: "AppFeature",
+      dependencies: [
+        "SharedModels",
+        .product(name: "Dependencies", package: "swift-dependencies"),
+      ]
+    ),
     .target(
       name: "SharedModels",
       dependencies: [
@@ -39,13 +46,7 @@ let package = Package(
         "SharedModels"
       ]
     ),
-    .target(
-      name: "WidgetSync",
-      dependencies: [
-        "SharedModels",
-        .product(name: "Dependencies", package: "swift-dependencies"),
-      ]
-    ),
+    
   ],
   swiftLanguageModes: [.v6]
 )

@@ -11,7 +11,7 @@
 		5CD2EF432FE1EC21006ECD9C /* SharedFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD2EF302FE1EC21006ECD9C /* SharedFramework.framework */; };
 		5CD2EF442FE1EC21006ECD9C /* SharedFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD2EF302FE1EC21006ECD9C /* SharedFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5CD2EF4D2FE1ED07006ECD9C /* SharedModels in Frameworks */ = {isa = PBXBuildFile; productRef = 5CD2EF4C2FE1ED07006ECD9C /* SharedModels */; };
-		5CD2EF852FE1FDDA006ECD9C /* WidgetSync in Frameworks */ = {isa = PBXBuildFile; productRef = 5CD2EF842FE1FDDA006ECD9C /* WidgetSync */; };
+		5CD2EFA22FE22916006ECD9C /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 5CD2EFA12FE22916006ECD9C /* AppFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,7 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CD2EF432FE1EC21006ECD9C /* SharedFramework.framework in Frameworks */,
-				5CD2EF852FE1FDDA006ECD9C /* WidgetSync in Frameworks */,
+				5CD2EFA22FE22916006ECD9C /* AppFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +188,7 @@
 			);
 			name = BundleDependencyRepro;
 			packageProductDependencies = (
-				5CD2EF842FE1FDDA006ECD9C /* WidgetSync */,
+				5CD2EFA12FE22916006ECD9C /* AppFeature */,
 			);
 			productName = BundleDependencyRepro;
 			productReference = 5CD2EF0C2FE1DC32006ECD9C /* BundleDependencyRepro.app */;
@@ -734,9 +734,9 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = SharedModels;
 		};
-		5CD2EF842FE1FDDA006ECD9C /* WidgetSync */ = {
+		5CD2EFA12FE22916006ECD9C /* AppFeature */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = WidgetSync;
+			productName = AppFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

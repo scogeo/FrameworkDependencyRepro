@@ -2,7 +2,7 @@ import Foundation
 import Dependencies
 import SharedModels
 
-public struct WidgetSync {
+public struct AppFeature {
   
   public func sync(model: MyModel) async {
     @Dependency(\.myModelStore) var modelStore
