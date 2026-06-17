@@ -11,7 +11,6 @@ import SharedModels
 
 struct ContentView: View {
   
-  @Dependency(\.date) var date
   @Dependency(\.myModelStore) var myModelStore
   
   var body: some View {

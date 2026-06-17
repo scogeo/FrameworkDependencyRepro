@@ -74,7 +74,6 @@
 		5CD2EF1A2FE1DE11006ECD9C /* shared-models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "shared-models"; sourceTree = "<group>"; };
 		5CD2EF302FE1EC21006ECD9C /* SharedFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD2EF382FE1EC21006ECD9C /* SharedFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CD2EF532FE1F459006ECD9C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		5CD2EF552FE1F459006ECD9C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -92,11 +91,6 @@
 		5CD2EF3E2FE1EC21006ECD9C /* SharedFrameworkTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SharedFrameworkTests;
-			sourceTree = "<group>";
-		};
-		5CD2EF572FE1F459006ECD9C /* BundleDependencyReproWidget */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BundleDependencyReproWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -137,7 +131,6 @@
 				5CD2EF0E2FE1DC32006ECD9C /* BundleDependencyRepro */,
 				5CD2EF312FE1EC21006ECD9C /* SharedFramework */,
 				5CD2EF3E2FE1EC21006ECD9C /* SharedFrameworkTests */,
-				5CD2EF572FE1F459006ECD9C /* BundleDependencyReproWidget */,
 				5CD2EF282FE1E6E7006ECD9C /* Frameworks */,
 				5CD2EF0D2FE1DC32006ECD9C /* Products */,
 			);
@@ -156,7 +149,6 @@
 		5CD2EF282FE1E6E7006ECD9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5CD2EF532FE1F459006ECD9C /* WidgetKit.framework */,
 				5CD2EF552FE1F459006ECD9C /* SwiftUI.framework */,
 			);
 			name = Frameworks;

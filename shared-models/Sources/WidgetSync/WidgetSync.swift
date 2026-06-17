@@ -7,6 +7,6 @@ public struct WidgetSync {
   public func sync(model: MyModel) async {
     @Dependency(\.myModelStore) var modelStore
     
-    try! await modelStore.save(model)
+    await modelStore.save(model)
   }
 }

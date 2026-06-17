@@ -15,8 +15,8 @@ public struct MyModel: Identifiable {
 
 @DependencyClient
 public struct MyModelStore: Sendable {
-  public var load: @Sendable (_ id: UUID) async throws -> MyModel?
-  public var save: @Sendable (_ model: MyModel) async throws -> Void
+  public var load: @Sendable (_ id: UUID) async -> MyModel?
+  public var save: @Sendable (_ model: MyModel) async -> Void
 }
 
 extension MyModelStore: TestDependencyKey {
