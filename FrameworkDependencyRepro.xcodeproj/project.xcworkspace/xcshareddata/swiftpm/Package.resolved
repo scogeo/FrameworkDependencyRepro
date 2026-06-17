@@ -1,5 +1,5 @@
 {
-  "originHash" : "caac26749e9a5413519fc9ee860c7427045f1ecc288031eb7bc6c537b2667878",
+  "originHash" : "63aff48a58d170d7fd49052373f865098c58e9712a63abd40195bc69142a9e6d",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -31,10 +31,10 @@
     {
       "identity" : "swift-dependencies",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/scogeo/swift-dependencies",
+      "location" : "https://github.com/pointfreeco/swift-dependencies",
       "state" : {
-        "branch" : "experiment",
-        "revision" : "0f505dee3a394ecb3ad8de53f8486a239ce435e1"
+        "revision" : "16f7dd14ee28d04617090f2a73198b8b316ffa12",
+        "version" : "1.13.1"
       }
     },
     {
