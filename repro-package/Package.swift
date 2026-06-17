@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-  name: "shared-models",
+  name: "repro-package",
   platforms: [
     .iOS(.v26)
   ],
