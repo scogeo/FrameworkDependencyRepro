@@ -64,4 +64,88 @@ warning: 'SharedModels' is missing a dependency on 'XCTestDynamicOverlay' becaus
 
 ## Current Scope
 
-This README is a first-pass summary of the repro. If useful, the next step is to add deeper analysis from build logs and build artifacts showing why the framework-linked target causes Xcode to scan `SharedModels` differently.
+This README is a first-pass summary of the repro and the initial build-artifact analysis. More detailed linker or build-system investigation can be added later if needed.
+
+## Initial Analysis
+
+The framework-linked target appears to be the condition that makes Xcode surface the warnings, but the modules in the warnings are not arbitrary. They correspond to modules re-exported by `swift-dependencies` itself.
+
+The build logs show that the framework target changes how Xcode materializes `SharedModels`.
+
+When building `SPMOnlyApp`, `SharedModels` is built as a package object/module artifact:
+
+```text
+Ld .../SharedModels.build/Objects-normal/<arch>/Binary/SharedModels.o
+CreateUniversalBinary .../Build/Products/Debug-iphonesimulator/SharedModels.o
+```
+
+When building `SPMWithFrameworkApp`, the `SharedFramework -> SharedModels` dependency causes Xcode to package `SharedModels` as a dynamic package framework:
+
+```text
+MkDir .../Build/Products/Debug-iphonesimulator/PackageFrameworks/SharedModels.framework
+ProcessInfoPlistFile .../PackageFrameworks/SharedModels.framework/Info.plist
+Ld .../SharedModels.build/Objects-normal/<arch>/Binary/SharedModels
+```
+
+That linker invocation uses a dynamic library install name:
+
+```text
+-dynamiclib
+-install_name @rpath/SharedModels.framework/SharedModels
+```
+
+The app then embeds that package framework:
+
+```text
+Copy .../PackageFrameworks/SharedModels.framework
+  .../SPMWithFrameworkApp.app/Frameworks
+```
+
+So the likely trigger is not merely that there are two paths to `SharedModels`. The framework target causes Xcode to turn `SharedModels` from a package object/module artifact into `PackageFrameworks/SharedModels.framework`. The dependency warning appears when Xcode validates that framework artifact's Swift module dependencies.
+
+In `swift-dependencies` 1.13.1, `Dependencies` re-exports several transitive dependencies:
+
+```swift
+// Sources/Dependencies/Internal/Exports.swift
+#if !EXCLUDE_EXPORTS
+  #if Clocks
+    @_exported import Clocks
+  #endif
+  #if CombineSchedulers
+    @_exported import CombineSchedulers
+  #endif
+  @_exported import ConcurrencyExtras
+  @_exported import IssueReporting
+  @_exported import XCTestDynamicOverlay
+#endif
+```
+
+`DependenciesMacros` also re-exports two transitive dependencies:
+
+```swift
+// Sources/DependenciesMacros/Internal/Exports.swift
+#if !EXCLUDE_EXPORTS
+  @_exported import IssueReporting
+  @_exported import XCTestDynamicOverlay
+#endif
+```
+
+The `SharedModels` target in this repro explicitly depends only on `Dependencies` and `DependenciesMacros`, but its emitted dependency artifacts include the same transitive modules. For example, Xcode emits per-architecture dependency-scan files under the build intermediates directory:
+
+```text
+Build/Intermediates.noindex/repro-package.build/Debug-iphonesimulator/SharedModels.build/Objects-normal/<arch>/SharedModels-dependencies-*.json
+```
+
+Those files include:
+
+```text
+Clocks
+CombineSchedulers
+ConcurrencyExtras
+Dependencies
+DependenciesMacros
+IssueReporting
+XCTestDynamicOverlay
+```
+
+This suggests the warning is not simply Xcode inventing missing dependencies. Xcode's diagnostic is exposed by the framework topology, but the specific missing modules come from the public import/export surface of `swift-dependencies` and `DependenciesMacros`.
