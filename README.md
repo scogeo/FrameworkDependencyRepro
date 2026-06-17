@@ -62,13 +62,24 @@ warning: 'SharedModels' is missing a dependency on 'CombineSchedulers' because d
 warning: 'SharedModels' is missing a dependency on 'XCTestDynamicOverlay' because dependency scan of Swift module 'SharedModels' discovered a dependency on 'XCTestDynamicOverlay'
 ```
 
-## Current Scope
+## Initial Analysis with assitance from OpenAI Codex
 
-This README is a first-pass summary of the repro and the initial build-artifact analysis. More detailed linker or build-system investigation can be added later if needed.
+### Summary
 
-## Initial Analysis
+The warning appears when the project introduces a framework target that also depends on `SharedModels`.
 
-The framework-linked target appears to be the condition that makes Xcode surface the warnings, but the modules in the warnings are not arbitrary. They correspond to modules re-exported by `swift-dependencies` itself.
+That setup is intentional and ordinary for app projects that need a framework boundary for App Intents, widgets, or extensions:
+
+```text
+SPMWithFrameworkApp -> AppFeature -> SharedModels
+SPMWithFrameworkApp -> SharedFramework -> SharedModels
+```
+
+In this shape, `SharedModels` is reached both through another Swift package target and through a framework target. Xcode detects this and changes how it builds `SharedModels`: instead of leaving it as a package object/module artifact, it packages `SharedModels` as a dynamic package framework under `PackageFrameworks/SharedModels.framework`. This is the strategy Xcode uses so that the app and framework can share one linked copy of the package product rather than creating duplicate symbols.
+
+That dynamic framework packaging step appears to be what makes Xcode validate `SharedModels`' Swift module dependency surface and emit the missing dependency warnings.
+
+### Build Log Evidence
 
 The build logs show that the framework target changes how Xcode materializes `SharedModels`.
 
@@ -101,7 +112,9 @@ Copy .../PackageFrameworks/SharedModels.framework
   .../SPMWithFrameworkApp.app/Frameworks
 ```
 
-So the likely trigger is not merely that there are two paths to `SharedModels`. The framework target causes Xcode to turn `SharedModels` from a package object/module artifact into `PackageFrameworks/SharedModels.framework`. The dependency warning appears when Xcode validates that framework artifact's Swift module dependencies.
+The warning appears in this second build shape, after `SharedModels` has become a package framework artifact.
+
+### Package Surface Evidence
 
 In `swift-dependencies` 1.13.1, `Dependencies` re-exports several transitive dependencies:
 
@@ -148,4 +161,10 @@ IssueReporting
 XCTestDynamicOverlay
 ```
 
-This suggests the warning is not simply Xcode inventing missing dependencies. Xcode's diagnostic is exposed by the framework topology, but the specific missing modules come from the public import/export surface of `swift-dependencies` and `DependenciesMacros`.
+So the warning is exposed by Xcode's framework build strategy, but the specific modules reported by the warning line up with modules visible through the current public import/export surface of `swift-dependencies` and `DependenciesMacros`.
+
+### Further Investigation
+
+One experiment was to enable `EXCLUDE_EXPORTS` in a local fork of `swift-dependencies`, because the package already guards the explicit `@_exported import` declarations with that condition. That experiment did not remove all of the warnings. It only removed the warning for `XCTestDynamicOverlay`.
+
+More investigation is needed to understand where the remaining warnings are coming from and whether they can be addressed by tightening imports, changing package traits, or making a broader package-structure change.
