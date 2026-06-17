@@ -42,6 +42,7 @@
 		5CD1C22C2FE2381C00AF3818 /* SPMOnlyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPMOnlyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD1C23D2FE238BE00AF3818 /* SPMWithFrameworkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPMWithFrameworkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD1C2E42FE240D800AF3818 /* repro-package */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "repro-package"; sourceTree = "<group>"; };
+		5CD1C3052FE2459900AF3818 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5CD2EF302FE1EC21006ECD9C /* SharedFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD2EF552FE1F459006ECD9C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -96,6 +97,7 @@
 		5CD2EF032FE1DC32006ECD9C = {
 			isa = PBXGroup;
 			children = (
+				5CD1C3052FE2459900AF3818 /* README.md */,
 				5CD1C2E42FE240D800AF3818 /* repro-package */,
 				5CD2EF312FE1EC21006ECD9C /* SharedFramework */,
 				5CD1C22D2FE2381C00AF3818 /* SPMOnlyApp */,
