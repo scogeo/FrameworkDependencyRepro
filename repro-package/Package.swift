@@ -20,7 +20,7 @@ let package = Package(
     ),
   ],
   dependencies: [
-    .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.13.0"),
+    .package(path: "/Users/gscott/github/forks/swift-dependencies"),
   ],
   targets: [
     // Targets are the basic building blocks of a package, defining a module or a test suite.
