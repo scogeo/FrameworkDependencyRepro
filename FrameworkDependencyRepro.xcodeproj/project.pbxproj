@@ -240,6 +240,9 @@
 			);
 			mainGroup = 5CD2EF032FE1DC32006ECD9C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				5CD1C3A12FE309D000AF3818 /* XCLocalSwiftPackageReference "../../../github/forks/swift-dependencies" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5CD2EF0D2FE1DC32006ECD9C /* Products */;
 			projectDirPath = "";
@@ -735,6 +738,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		5CD1C3A12FE309D000AF3818 /* XCLocalSwiftPackageReference "../../../github/forks/swift-dependencies" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../github/forks/swift-dependencies";
+		};
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		5CD1C2E52FE2410800AF3818 /* AppFeature */ = {

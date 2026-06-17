@@ -1,5 +1,5 @@
 
-import Dependencies
+public import Dependencies
 import DependenciesMacros
 public import Foundation
 
@@ -38,4 +38,3 @@ extension MyModelStore: DependencyKey {
     )
   }()
 }
-

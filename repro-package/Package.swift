@@ -20,7 +20,10 @@ let package = Package(
     ),
   ],
   dependencies: [
-    .package(path: "/Users/gscott/github/forks/swift-dependencies"),
+    .package(
+      path: "/Users/gscott/github/forks/swift-dependencies",
+      traits: ["Foundation", "FoundationNetworking"]
+    ),
   ],
   targets: [
     // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -37,6 +40,10 @@ let package = Package(
       dependencies: [
         .product(name: "Dependencies", package: "swift-dependencies"),
         .product(name: "DependenciesMacros", package: "swift-dependencies"),
+      ],
+      swiftSettings: [
+        .enableUpcomingFeature("InternalImportsByDefault"),
+        .enableUpcomingFeature("MemberImportVisibility"),
       ]
     ),
   ],
