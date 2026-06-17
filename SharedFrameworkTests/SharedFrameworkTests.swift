@@ -6,10 +6,10 @@ import Testing
 
 struct SharedFrameworkTests {
 
-    @Test func testSTore() async throws {
+    @Test func testStore() async throws {
       @Dependency(\.myModelStore) var myModelStore
     
-      #expect(try await myModelStore.load(id: UUID()) == nil)
+      #expect(await myModelStore.load(id: UUID()) == nil)
     }
 
 }
