@@ -40,13 +40,6 @@ let package = Package(
         .product(name: "DependenciesMacros", package: "swift-dependencies"),
       ]
     ),
-    .testTarget(
-      name: "SharedModelsTests",
-      dependencies: [
-        "SharedModels"
-      ]
-    ),
-    
   ],
   swiftLanguageModes: [.v6]
 )

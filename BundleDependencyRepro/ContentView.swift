@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  BundleDependencyRepro
-//
-//  Created by George Scott on 6/16/26.
-//
-
 import SwiftUI
 import Dependencies
 import SharedModels
