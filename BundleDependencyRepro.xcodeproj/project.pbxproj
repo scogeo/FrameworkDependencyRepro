@@ -11,19 +11,11 @@
 		5CD1C2492FE2392C00AF3818 /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 5CD1C2482FE2392C00AF3818 /* AppFeature */; };
 		5CD1C24A2FE2393000AF3818 /* SharedFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD2EF302FE1EC21006ECD9C /* SharedFramework.framework */; platformFilter = ios; };
 		5CD1C24B2FE2393000AF3818 /* SharedFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD2EF302FE1EC21006ECD9C /* SharedFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5CD2EF392FE1EC21006ECD9C /* SharedFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD2EF302FE1EC21006ECD9C /* SharedFramework.framework */; };
 		5CD2EF4D2FE1ED07006ECD9C /* SharedModels in Frameworks */ = {isa = PBXBuildFile; productRef = 5CD2EF4C2FE1ED07006ECD9C /* SharedModels */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		5CD1C24C2FE2393000AF3818 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CD2EF042FE1DC32006ECD9C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5CD2EF2F2FE1EC21006ECD9C;
-			remoteInfo = SharedFramework;
-		};
-		5CD2EF3A2FE1EC21006ECD9C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CD2EF042FE1DC32006ECD9C /* Project object */;
 			proxyType = 1;
@@ -51,7 +43,6 @@
 		5CD1C23D2FE238BE00AF3818 /* SPMWithFrameworkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPMWithFrameworkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD2EF1A2FE1DE11006ECD9C /* shared-models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "shared-models"; sourceTree = "<group>"; };
 		5CD2EF302FE1EC21006ECD9C /* SharedFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CD2EF382FE1EC21006ECD9C /* SharedFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD2EF552FE1F459006ECD9C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -66,19 +57,9 @@
 			path = SPMWithFrameworkApp;
 			sourceTree = "<group>";
 		};
-		5CD2EF0E2FE1DC32006ECD9C /* BundleDependencyRepro */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BundleDependencyRepro;
-			sourceTree = "<group>";
-		};
 		5CD2EF312FE1EC21006ECD9C /* SharedFramework */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SharedFramework;
-			sourceTree = "<group>";
-		};
-		5CD2EF3E2FE1EC21006ECD9C /* SharedFrameworkTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SharedFrameworkTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -109,14 +90,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CD2EF352FE1EC21006ECD9C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5CD2EF392FE1EC21006ECD9C /* SharedFramework.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -124,9 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				5CD2EF1A2FE1DE11006ECD9C /* shared-models */,
-				5CD2EF0E2FE1DC32006ECD9C /* BundleDependencyRepro */,
 				5CD2EF312FE1EC21006ECD9C /* SharedFramework */,
-				5CD2EF3E2FE1EC21006ECD9C /* SharedFrameworkTests */,
 				5CD1C22D2FE2381C00AF3818 /* SPMOnlyApp */,
 				5CD1C23E2FE238BE00AF3818 /* SPMWithFrameworkApp */,
 				5CD2EF282FE1E6E7006ECD9C /* Frameworks */,
@@ -138,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				5CD2EF302FE1EC21006ECD9C /* SharedFramework.framework */,
-				5CD2EF382FE1EC21006ECD9C /* SharedFrameworkTests.xctest */,
 				5CD1C22C2FE2381C00AF3818 /* SPMOnlyApp.app */,
 				5CD1C23D2FE238BE00AF3818 /* SPMWithFrameworkApp.app */,
 			);
@@ -238,29 +208,6 @@
 			productReference = 5CD2EF302FE1EC21006ECD9C /* SharedFramework.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5CD2EF372FE1EC21006ECD9C /* SharedFrameworkTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5CD2EF492FE1EC21006ECD9C /* Build configuration list for PBXNativeTarget "SharedFrameworkTests" */;
-			buildPhases = (
-				5CD2EF342FE1EC21006ECD9C /* Sources */,
-				5CD2EF352FE1EC21006ECD9C /* Frameworks */,
-				5CD2EF362FE1EC21006ECD9C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5CD2EF3B2FE1EC21006ECD9C /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				5CD2EF3E2FE1EC21006ECD9C /* SharedFrameworkTests */,
-			);
-			name = SharedFrameworkTests;
-			packageProductDependencies = (
-			);
-			productName = SharedFrameworkTests;
-			productReference = 5CD2EF382FE1EC21006ECD9C /* SharedFrameworkTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -280,10 +227,6 @@
 					5CD2EF2F2FE1EC21006ECD9C = {
 						CreatedOnToolsVersion = 26.5;
 					};
-					5CD2EF372FE1EC21006ECD9C = {
-						CreatedOnToolsVersion = 26.5;
-						TestTargetID = 5CD2EF0B2FE1DC32006ECD9C;
-					};
 				};
 			};
 			buildConfigurationList = 5CD2EF072FE1DC32006ECD9C /* Build configuration list for PBXProject "BundleDependencyRepro" */;
@@ -301,7 +244,6 @@
 			projectRoot = "";
 			targets = (
 				5CD2EF2F2FE1EC21006ECD9C /* SharedFramework */,
-				5CD2EF372FE1EC21006ECD9C /* SharedFrameworkTests */,
 				5CD1C22B2FE2381C00AF3818 /* SPMOnlyApp */,
 				5CD1C23C2FE238BE00AF3818 /* SPMWithFrameworkApp */,
 			);
@@ -324,13 +266,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5CD2EF2E2FE1EC21006ECD9C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5CD2EF362FE1EC21006ECD9C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -361,13 +296,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CD2EF342FE1EC21006ECD9C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -376,11 +304,6 @@
 			platformFilter = ios;
 			target = 5CD2EF2F2FE1EC21006ECD9C /* SharedFramework */;
 			targetProxy = 5CD1C24C2FE2393000AF3818 /* PBXContainerItemProxy */;
-		};
-		5CD2EF3B2FE1EC21006ECD9C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5CD2EF2F2FE1EC21006ECD9C /* SharedFramework */;
-			targetProxy = 5CD2EF3A2FE1EC21006ECD9C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -770,59 +693,6 @@
 			};
 			name = Release;
 		};
-		5CD2EF4A2FE1EC21006ECD9C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = V93Q3Y8MA3;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.SharedFrameworkTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BundleDependencyRepro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BundleDependencyRepro";
-			};
-			name = Debug;
-		};
-		5CD2EF4B2FE1EC21006ECD9C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = V93Q3Y8MA3;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.SharedFrameworkTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BundleDependencyRepro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BundleDependencyRepro";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -858,15 +728,6 @@
 			buildConfigurations = (
 				5CD2EF462FE1EC21006ECD9C /* Debug */,
 				5CD2EF472FE1EC21006ECD9C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5CD2EF492FE1EC21006ECD9C /* Build configuration list for PBXNativeTarget "SharedFrameworkTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5CD2EF4A2FE1EC21006ECD9C /* Debug */,
-				5CD2EF4B2FE1EC21006ECD9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
