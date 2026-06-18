@@ -21,7 +21,8 @@ let package = Package(
   ],
   dependencies: [
     .package(
-      path: "/Users/gscott/github/forks/swift-dependencies",
+      url: "https://github.com/pointfreeco/swift-dependencies",
+      from: "1.13.1",
       traits: ["Foundation", "FoundationNetworking"]
     ),
   ],

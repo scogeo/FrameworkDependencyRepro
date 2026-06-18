@@ -1,5 +1,5 @@
 {
-  "originHash" : "bf040ab896429ad83e6f2cdfda5eafeb386c316fcd0d135614a27587074aa18d",
+  "originHash" : "7455f287c72df5f9ecebd372f6ed00f1879f1b5b8b5b2691f6162bed76437b51",
   "pins" : [
     {
       "identity" : "swift-concurrency-extras",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "a90e2e40a7a840a853dd29e57cbef5dbb72c9d5b",
         "version" : "1.4.0"
+      }
+    },
+    {
+      "identity" : "swift-dependencies",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-dependencies",
+      "state" : {
+        "revision" : "008b012380623976ce2b9c92c5bf2bda8bcf5e55",
+        "version" : "1.14.0"
       }
     },
     {
