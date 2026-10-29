@@ -22,8 +22,12 @@ let package = Package(
   dependencies: [
     .package(
       url: "https://github.com/pointfreeco/swift-dependencies",
-      from: "1.13.1",
+      from: "1.17.1",
       traits: ["Foundation", "FoundationNetworking"]
+    ),
+    .package(
+      url: "https://github.com/pointfreeco/swift-issue-reporting",
+      from: "2.1.2"
     ),
   ],
   targets: [
@@ -41,10 +45,7 @@ let package = Package(
       dependencies: [
         .product(name: "Dependencies", package: "swift-dependencies"),
         .product(name: "DependenciesMacros", package: "swift-dependencies"),
-      ],
-      swiftSettings: [
-        .enableUpcomingFeature("InternalImportsByDefault"),
-        .enableUpcomingFeature("MemberImportVisibility"),
+        .product(name: "IssueReporting", package: "swift-issue-reporting"),
       ]
     ),
   ],
